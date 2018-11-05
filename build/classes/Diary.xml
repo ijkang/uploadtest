@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="diary">
+	<resultMap type="diary" id="diaryResult">
+		<result property="mnum" column="mnum" />
+		<result property="id" column="id" /> 
+		<result property="nic" column="nic" />
+		<result property="wnum" column="wnum" />
+		<result property="memo" column="memo" />
+		<result property="dday" column="dday" />
+		<result property="open" column="open" />
+	</resultMap> 
+<insert id="memoInsert" parameterType="diary"> 
+	insert into diary values(#{mnum},#{id},#{nic},diarySeq.nextval,#{memo},#{dday},#{open}) 
+</insert> 
+<select id="memoCheck" resultMap="diaryResult" parameterType="model.Condition">	
+	select distinct dday from diary where TO_CHAR(dday,'YYYYMM') = ${memoDate} and mnum = ${mnum}
+<!--  DISTINCT	TO_char(dday,'DD')  -->
+</select>
+ 
+ <select id="memoView" resultMap="diaryResult" parameterType="model.Condition">	 
+	select * from diary where TO_CHAR(dday,'YYYYMMDD') = ${memoDate} and mnum = ${mnum}
+<!--  DISTINCT	TO_char(dday,'DD')  -->
+</select> 
+<select id="ddayMemo" resultMap="diaryResult" parameterType="model.Condition">
+	select memo,dday from diary where sysdate<![CDATA[ < ]]> dday and ROWNUM <![CDATA[ < ]]>= 5 and mnum = ${mnum} order by dday asc
+</select> 
+<delete id="memoDelete" parameterType="model.Condition">
+	delete from diary where wnum = ${mnum}
+</delete> 
+</mapper>

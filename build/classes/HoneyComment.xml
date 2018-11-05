@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="honeycomment">
+ <resultMap type="honeycomment" id="commentResult">
+ <result property="wnum2" column="wnum2"/>
+ <result property="content2" column="content2"/>
+ </resultMap> 
+ <select id="commentList" parameterType="int" resultMap="commentResult" >
+  select * from (select a.*, rownum rn from(select * from honeycomment where wnum2 = #{wnum2}) a)
+<!-- 				    where rn between #{start} and #{end} -->
+ </select>
+ <insert id="insertCmt" parameterType="honeycomment" >
+  insert into honeycomment values(#{wnum2},#{content2})
+ </insert>
+</mapper>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="manager">
+	<resultMap id="managerResult" type="manager">
+		<result property="master" column="master" />
+		<result property="masterId" column="masterId" />
+		<result property="masterPass" column="masterPass" />
+		<result property="masterNum" column="masterNum" />
+	</resultMap>
+	<select id="confirmId" resultType="int" parameterType="string">
+		select count(*) from mgr where masterid = #{masterid}
+	</select>
+	
+	<select id="selectPass" resultType="string" parameterType="string">
+		select masterPass from mgr where masterid = #{masterid}
+	</select>
+	
+	<insert id="insertMgr"  parameterType="manager" > 
+		insert into mgr values( #{master} , #{masterId} , #{masterPass} ,seq_mgr.nextval)
+	</insert>
+
+	<select id="count" resultType="int">
+		select count(*) from mgr
+	</select>	
+	<select id="selectMgrList" parameterType="model.MemberPage"
+		resultMap="managerResult">
+		select * from (select a.*,rownum rn from (select * from mgr order by masterid)a) where rn between #{startRow} and #{endRow}
+	</select>
+</mapper>

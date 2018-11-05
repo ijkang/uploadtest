@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="helper">
+	<resultMap type="helper" id="helperResult">
+		<result property="mnum" column="mnum" />
+		<result property="snum" column="snum" />
+		<result property="wnum" column="wnum" />
+		<result property="context" column="context" />
+		<result property="helpdate" column="helpdate" />
+		<result property="sendcheck" column="sendcheck" />
+	</resultMap>
+	<insert id="insert" parameterType="helper">
+		insert into helper(mnum,snum,wnum,context,helpdate,sendcheck)
+		values(#{mnum},#{snum},wnum.nextval,#{context},sysdate,'N')
+	</insert>
+	<select id="selectHelperToList" parameterType="model.MemberPage"
+		resultMap="helperResult">
+		select * from (select a.*,rownum rn from (select * from
+		helper where mnum = #{intCond} order by helpdate desc)a) where rn between
+		#{startRow} and #{endRow}
+	</select>
+	<select id="selectHelperFromList" parameterType="model.MemberPage"
+		resultMap="helperResult">
+		select * from (select a.*,rownum rn from (select * from
+		helper where snum = #{intCond} order by helpdate)a) where rn between
+		#{startRow} and #{endRow}
+	</select>
+	<select id="helpTocount" parameterType="helper" resultType="int">
+		select count(*) from helper where mnum=#{mnum}
+	</select>
+	<select id="helpFromcount" parameterType="helper" resultType="int">
+		select count(*) from helper where snum=#{mnum}
+	</select>
+	<update id="helpReadCheck" parameterType="helper">
+		update helper set sendcheck= 'Y' where wnum=#{wnum} 
+	</update>
+	
+</mapper>

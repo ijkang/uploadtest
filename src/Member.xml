@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="member">
+	<resultMap id="memberResult" type="member">
+	<result property="mnum"		column="mnum"/>
+    <result property="name"		column="name"/>
+    <result property="id"		column="id"/>
+    <result property="pass" 	column="pass"/>
+    <result property="nic" 		column="nic"/>
+    <result property="gender"	column="gender"/>
+    <result property="pnum"		column="pnum"/>
+    <result property="addr"		column="addr"/> 
+    <result property="point"	column="point"/>
+    <result property="email"	column="email"/>
+	</resultMap>
+	<select id="selectMemberList" parameterType="model.MemberPage"
+		resultMap="memberResult">
+		select * from (select a.*,rownum rn from (select * from member order by	mnum desc)a) where rn between #{startRow} and #{endRow}
+	</select>
+	
+	<select id="memberView" parameterType="String" resultMap="memberResult">
+		select * from member where mnum = #{mnum}
+	</select>
+	
+	<select id="count" resultType="int">
+		select count(*) from member
+	</select>
+	
+	<insert id="insert" parameterType="member"> 
+	<selectKey keyProperty="mnum"  resultType="int" order="BEFORE">
+			select nvl(max(mnum),0)+1 mnum from member
+	</selectKey> 
+		insert into member(mnum,name,id,pass,nic,gender,pnum,addr,point,email) 
+			values (#{mnum},#{name},#{id},#{pass},#{nic},
+				#{gender},#{pnum},#{addr},0,#{email})
+	</insert>
+	
+	<delete id="deleteMember" parameterType="int">
+		delete from member where mnum = #{mnum}
+	</delete>
+	
+	<update id="nicChange" parameterType="member">
+		update set nic=#{nic} where mnum=#{mnum}
+	</update>
+	
+	<select id="confirmId" resultType="int" parameterType="string">
+		select count(*) from member where id = #{id}
+	</select>
+	
+	<select id="selectPass" resultType="string" parameterType="string">
+		select pass from member where id = #{id}
+	</select>
+	<select id="selectNic" resultType="string" parameterType="string">
+		select nic from member where id = #{id}
+	</select>
+ 
+	<select id="selectMnum" resultType="int" parameterType="string">
+		select mnum from member where id = #{id}
+	</select>
+	
+	<select id="selectHoney" resultType="member" parameterType="int">
+		select id,nic,pass from member where mnum = #{mnum}
+	</select>
+	  <select id="selectList" resultMap="memberResult">
+    select * from member
+  </select>
+  
+  <select id="select" parameterType="string" resultType="member">
+    select * from member where id=#{id}
+  </select>
+  <delete id="delete" parameterType="string">
+  	delete from member where name=#{name}
+  </delete>
+  
+  <update id="update" parameterType="member">
+  	update member set pass=#{pass},nic=#{nic},
+		pnum=#{pnum},addr=#{addr},email=#{email} where id=#{id}
+  </update>
+  	<select id="confirm" parameterType="string" resultType="member">
+		select id from member where id = #{id}
+	</select>
+</mapper>

@@ -1,0 +1,500 @@
+header {
+	height: 80px;
+	vertical-align: middle;
+	border-bottom: 1px #888 solid;
+	margin: 30px 0 30px 45px;
+}
+
+.main {
+	float: left;
+	text-shadow: 2px 2px 0px #eee, 4px 4px 0px #000;
+	font-size: 50px;
+	text-align: center;
+	margin-left: 280px;
+}
+#sqaure {
+	float: left;
+	width: 315px;
+	height: 300px;
+	border: white solid 7px;
+	position:static; 
+/* 	opacity: 0.6; */
+	font-size: 20px; 
+	margin: 10px;
+/* 	border-radius: 39px 39px 39px 39px; */
+/* 	-moz-border-radius: 39px 39px 39px 39px; */
+/* 	-webkit-border-radius: 39px 39px 39px 39px; */
+	padding: 20px; 
+} 
+#sqaure > table { margin:0px; border-collapse: collapse; height:80%; font-size: 12px; width: 98% ;border:1px solid black; } 
+#sqaure > th {
+/* 	border:1px solid black;  */
+	color:red;} 
+#sqaure > td {
+/* 	border:1px solid black; */
+color:red;} 
+#sqaure > caption {font-size: 50px;} 
+#square > header{ font-size:20px;} 
+
+
+#insquare{ width: 40%; height: 40%; float: left; margin: 10px; text-align: center; display: table-cell; vertical-align: middle;  }
+#insquare:HOVER{ background-color: black; color: white; right: 10px;}
+
+#centerLine {
+	width: 1px;
+	height: 755px;
+	border: 3px solid black;
+	position: relative;
+	left: 400px;
+}
+
+footer {
+	height: 80px;
+	margin-top: 30px;
+	border-top: 1px #888 solid;
+	text-align: center;
+	clear: both;
+	height: 100px;
+	padding-top: 20px;
+}
+
+nav ul {
+	list-style: none;
+}
+
+ul {
+	list-style: none;
+}
+
+nav ul li {
+	float: left;
+	margin: 0 20px;
+}
+
+nav {
+	float: left;
+}
+
+#bg {
+	position: absolute;
+}
+
+@charset "utf-8";
+
+* {
+	font-family: '나눔고딕'; 
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	height:auto;
+	font-size: 13px; 
+	color: #333; 
+	/* fallback */
+	background-color: #2F2727;
+	background-image: url(images/radial_bg.png);
+	background-position: center center;
+	background-repeat: no-repeat;
+	/* Safari 4-5, Chrome 1-9 */
+	/* Can't specify a percentage size? Laaaaaame. */
+	background: -webkit-gradient(radial, center center, 0, center center, 460, from(#E0E6F8
+		), to(#A9A9F5));
+	/* Safari 5.1+, Chrome 10+ */
+	background: -webkit-radial-gradient(circle, #E0E6F8, #A9A9F5);
+	/* Firefox 3.6+ */
+	background: -moz-radial-gradient(circle, #1a82f7, #2F2727);
+	/* IE 10 */
+	background: -ms-radial-gradient(circle, #1a82f7, #2F2727);
+
+	/* Opera couldn't do radial gradients, then at some point they started supporting the -webkit- syntax, how it kinda does but it's kinda broken (doesn't do sizing) */
+}
+
+nav a {
+	text-decoration: none;
+	padding: 5px;
+	font-weight: bold;
+	color: #333;
+	font-size: 15px;
+}
+
+nav a:hover {
+	color: #6799FF;
+	border-bottom: 1px #6799FF solid;
+}
+
+.menu:HOVER {
+	color: #6799FF;
+	border-bottom: 1px #6799FF solid;
+}
+#diary {  
+	width: 59.5%;	float: left;	height: 1300px; margin: 0 0 0 20%;	background: #FFFCC6; border: 7px solid white;
+	padding: 10px; position: relative; text-align: center;
+}  
+#login {
+	margin-left: 10cm;
+}
+
+body {
+	background-color: #F8FFFF;
+}
+#main {
+	margin-top: 50px;
+	width: 100%;
+	height: 600px;
+	background-color: white;
+}
+
+article {
+	width: 100%;   
+	height: 1300px;
+	margin: 0 0 50px 0;
+	float: left;
+	position: relative; 
+	/* border-radius: 39px 39px 39px 39px; */
+	/* -moz-border-radius: 39px 39px 39px 39px; */
+	/* -webkit-border-radius: 39px 39px 39px 39px; */
+	/* border: 9px ridge #000000; */
+}
+
+.left {
+	float: left;
+	width: 50%;
+}
+
+.right {
+	float: left;
+	width: 50%;
+}
+
+
+.button {
+	background-color: #5A5A5A;
+	float: left;
+	margin-top: 10px;
+	color: white;
+	padding: 4px 5px 3px 4px;
+	cursor: pointer;
+	border: white 1px solid;
+	box-shadow: 3px 3px 3px lightgray;
+}
+
+.button:HOVER {
+	background-color: white;
+	color: black;
+}
+/* .loginInfo{ height: 10%;} */
+#sideMenu {
+	width: 20%;
+	height: 760px;
+	float: right;
+	margin: 0 0 0 -19px;
+	position: absolute; 
+	right: 15px;
+}
+
+.menu {
+	margin: 20px 50px 0 0;
+	border: red 1px solid;
+	height: 50px; 
+/* 	border-top-right-radius: 10px; */
+/* 	border-bottom-right-radius: 10px; */
+	background: linear-gradient(to bottom, #FFFF66, white 30%, #FFFF66);
+}
+
+.admin {
+	float: left;
+	font-weight: bold;
+	text-decoration: none;
+	box-shadow: inset #ffffff 50px -4px 0px -4px, #91fab2 3px 2px 2px;
+	o-box-shadow: inset #ffffff 50px -4px 0px -4px, #91fab2 3px 2px 2px;
+	-moz-box-shadow: inset #ffffff 50px -4px 0px -4px, #91fab2 3px 2px 2px;
+	-webkit-box-shadow: inset #ffffff 50px -4px 0px -4px, #91fab2 3px 2px
+		2px;
+	background: #fc6060;
+	background: -o-linear-gradient(90deg, #fc6060, #ff0000);
+	background: -moz-linear-gradient(center top, #fc6060 5%, #ff0000 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #fc6060
+		), color-stop(1, #ff0000));
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fc6060',
+		endColorstr='#ff0000');
+	background: -webkit-linear-gradient(#fc6060, #ff0000);
+	background: -ms-linear-gradient(#fc6060, #ff0000);
+	background: linear-gradient(#fc6060, #ff0000);
+	text-indent: 33px;
+	line-height: 32px;
+	-moz-border-radius: 0 24px 24px 0;
+	-webkit-border-radius: 0 24px 24px 0;
+	border-radius: 0 24px 24px 0;
+	text-align: center;
+	vertical-align: middle;
+	display: inline-block;
+	font-size: 25px;
+	color: #ffffff;
+	width: 164px;
+	height: 31px;
+	padding: 13px;
+	text-shadow: #050505 3px 1px 0px;
+	border-color: #090a0a;
+	border-width: 3px;
+	border-style: solid;
+	margin-top: 30px;
+}
+
+.admin:active {
+	box-shadow: inset #ffffff 50px -4px 0px -4px, #91fab2 3px 0 2px;
+	o-box-shadow: inset #ffffff 50px -4px 0px -4px, #91fab2 3px 0 2px;
+	-moz-box-shadow: inset #ffffff 50px -4px 0px -4px, #91fab2 3px 0 2px;
+	-webkit-box-shadow: inset #ffffff 50px -4px 0px -4px, #91fab2 3px 0 2px;
+	position: relative;
+	top: 2px
+}
+
+.admin:hover {
+	background: #ff0000;
+	background: -o-linear-gradient(90deg, #ff0000, #fc6060);
+	background: -moz-linear-gradient(center top, #ff0000 5%, #fc6060 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ff0000
+		), color-stop(1, #fc6060));
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0000',
+		endColorstr='#fc6060');
+	background: -webkit-linear-gradient(#ff0000, #fc6060);
+	background: -ms-linear-gradient(#ff0000, #fc6060);
+	background: linear-gradient(#ff0000, #fc6060);
+}
+
+.ggul {
+	font-weight: bold;
+	text-decoration: none;
+	box-shadow: inset #ffffff 50px -3px 0px -4px, #fa93fa 3px 4px 2px;
+	o-box-shadow: inset #ffffff 50px -3px 0px -4px, #fa93fa 3px 4px 2px;
+	-moz-box-shadow: inset #ffffff 50px -3px 0px -4px, #fa93fa 3px 4px 2px;
+	-webkit-box-shadow: inset #ffffff 50px -3px 0px -4px, #fa93fa 3px 4px
+		2px;
+	background: #ffec19;
+	background: -o-linear-gradient(90deg, #ffec19, #fff369);
+	background: -moz-linear-gradient(center top, #ffec19 5%, #fff369 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffec19
+		), color-stop(1, #fff369));
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffec19',
+		endColorstr='#fff369');
+	background: -webkit-linear-gradient(#ffec19, #fff369);
+	background: -ms-linear-gradient(#ffec19, #fff369);
+	background: linear-gradient(#ffec19, #fff369);
+	text-indent: 25px;
+	line-height: 30px;
+	-moz-border-radius: 24px 0 0 24px;
+	-webkit-border-radius: 24px 0 0 24px;
+	border-radius: 24px 0 0 24px;
+	text-align: center;
+	vertical-align: middle;
+	display: inline-block;
+	font-size: 22px;
+	color: #ffffff;
+	width: 134px;
+	height: 30px;
+	padding: 13px;
+	text-shadow: #000000 2px 2px 0px;
+	border-color: #000000;
+	border-width: 2px;
+	border-style: solid;
+}
+
+.ggul:active {
+	box-shadow: inset #ffffff 50px -3px 0px -4px, #fa93fa 3px 0 2px;
+	o-box-shadow: inset #ffffff 50px -3px 0px -4px, #fa93fa 3px 0 2px;
+	-moz-box-shadow: inset #ffffff 50px -3px 0px -4px, #fa93fa 3px 0 2px;
+	-webkit-box-shadow: inset #ffffff 50px -3px 0px -4px, #fa93fa 3px 0 2px;
+	position: relative;
+	top: 4px
+}
+
+.ggul:hover {
+	background: #fff369;
+	background: -o-linear-gradient(90deg, #fff369, #ffec19);
+	background: -moz-linear-gradient(center top, #fff369 5%, #ffec19 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #fff369
+		), color-stop(1, #ffec19));
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff369',
+		endColorstr='#ffec19');
+	background: -webkit-linear-gradient(#fff369, #ffec19);
+	background: -ms-linear-gradient(#fff369, #ffec19);
+	background: linear-gradient(#fff369, #ffec19);
+}
+
+.helper {
+	font-weight: bold;
+	text-decoration: none;
+	box-shadow: inset #ffffff 50px -3px 0px -4px, #6666ff 3px 4px 2px;
+	o-box-shadow: inset #ffffff 50px -3px 0px -4px, #6666ff 3px 4px 2px;
+	-moz-box-shadow: inset #ffffff 50px -3px 0px -4px, #6666ff 3px 4px 2px;
+	-webkit-box-shadow: inset #ffffff 50px -3px 0px -4px, #6666ff 3px 4px
+		2px;
+	background: #19ff25;
+	background: -o-linear-gradient(90deg, #19ff25, #66ff85);
+	background: -moz-linear-gradient(center top, #19ff25 5%, #66ff85 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #19ff25
+		), color-stop(1, #66ff85));
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#19ff25',
+		endColorstr='#66ff85');
+	background: -webkit-linear-gradient(#19ff25, #66ff85);
+	background: -ms-linear-gradient(#19ff25, #66ff85);
+	background: linear-gradient(#19ff25, #66ff85);
+	text-indent: 25px;
+	line-height: 30px;
+	-moz-border-radius: 24px 0 0 24px;
+	-webkit-border-radius: 24px 0 0 24px;
+	border-radius: 24px 0 0 24px;
+	text-align: center;
+	vertical-align: middle;
+	display: inline-block;
+	font-size: 22px;
+	color: #ffffff;
+	width: 134px;
+	height: 30px;
+	padding: 13px;
+	text-shadow: #000000 2px 2px 0px;
+	border-color: #000000;
+	border-width: 2px;
+	border-style: solid;
+}
+
+.help:active {
+	box-shadow: inset #ffffff 50px -3px 0px -4px, #6666ff 3px 0 2px;
+	o-box-shadow: inset #ffffff 50px -3px 0px -4px, #6666ff 3px 0 2px;
+	-moz-box-shadow: inset #ffffff 50px -3px 0px -4px, #6666ff 3px 0 2px;
+	-webkit-box-shadow: inset #ffffff 50px -3px 0px -4px, #6666ff 3px 0 2px;
+	position: relative;
+	top: 4px
+}
+
+.help:hover {
+	background: #66ff85;
+	background: -o-linear-gradient(90deg, #66ff85, #19ff25);
+	background: -moz-linear-gradient(center top, #66ff85 5%, #19ff25 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #66ff85
+		), color-stop(1, #19ff25));
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#66ff85',
+		endColorstr='#19ff25');
+	background: -webkit-linear-gradient(#66ff85, #19ff25);
+	background: -ms-linear-gradient(#66ff85, #19ff25);
+	background: linear-gradient(#66ff85, #19ff25);
+}
+
+.diar {
+	font-weight: bold;
+	text-decoration: none;
+	box-shadow: inset #ffffff 50px -4px 0px -4px, #faf20d 3px 2px 2px;
+	o-box-shadow: inset #ffffff 50px -4px 0px -4px, #faf20d 3px 2px 2px;
+	-moz-box-shadow: inset #ffffff 50px -4px 0px -4px, #faf20d 3px 2px 2px;
+	-webkit-box-shadow: inset #ffffff 50px -4px 0px -4px, #faf20d 3px 2px
+		2px;
+	background: #00ff48;
+	background: -o-linear-gradient(90deg, #00ff48, #8affa9);
+	background: -moz-linear-gradient(center top, #00ff48 5%, #8affa9 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #00ff48
+		), color-stop(1, #8affa9));
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ff48',
+		endColorstr='#8affa9'); 
+	background: -webkit-linear-gradient(#00ff48, #8affa9);
+	background: -ms-linear-gradient(#00ff48, #8affa9);
+	background: linear-gradient(#00ff48, #8affa9);
+	text-indent: 33px;
+	line-height: 32px;
+	-moz-border-radius: 0 24px 24px 0;
+	-webkit-border-radius: 0 24px 24px 0;
+	border-radius: 0 24px 24px 0;
+	text-align: center;
+	vertical-align: middle;
+	display: inline-block;
+	font-size: 25px;
+	color: #ffffff;
+	width: 164px;
+	height: 31px;
+	padding: 13px;
+	text-shadow: #050505 3px 1px 0px;
+	border-color: #090a0a;
+	border-width: 3px;
+	border-style: solid;
+}
+
+.diar:active {
+	box-shadow: inset #ffffff 50px -4px 0px -4px, #faf20d 3px 0 2px;
+	o-box-shadow: inset #ffffff 50px -4px 0px -4px, #faf20d 3px 0 2px;
+	-moz-box-shadow: inset #ffffff 50px -4px 0px -4px, #faf20d 3px 0 2px;
+	-webkit-box-shadow: inset #ffffff 50px -4px 0px -4px, #faf20d 3px 0 2px;
+	position: relative;
+	top: 2px
+}
+
+.diar:hover {
+	background: #8affa9;
+	background: -o-linear-gradient(90deg, #8affa9, #00ff48);
+	background: -moz-linear-gradient(center top, #8affa9 5%, #00ff48 100%); 
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #8affa9
+		), color-stop(1, #00ff48));
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#8affa9',
+		endColorstr='#00ff48');
+	background: -webkit-linear-gradient(#8affa9, #00ff48);
+	background: -ms-linear-gradient(#8affa9, #00ff48);
+	background: linear-gradient(#8affa9, #00ff48);
+}
+
+/* table { */
+/* 	width: 90%; */
+/* 	border-collapse: collapse; */
+/* 	margin: 30px 0 0 30px; */
+/* 	border: 1px solid black; */
+/* } */
+
+/* td, th { */
+/* 	border: 1px solid green; */
+/* 	height: 30px; */
+/* } */
+
+/* th { */
+/* 	background-color: green; */
+/* 	color: white; */
+/* } */
+
+header {
+	font-size: 30px;
+	text-align: center;
+}
+
+button {
+	margin-top: 20px;
+}
+
+#content:HOVER {
+	background-color: white;
+	color: black;
+}
+
+#read {
+	color: gray;
+}
+
+#unread {
+	color: blue;
+}
+
+.radial-center {
+	/* fallback */
+	background-color: #2F2727;
+	background-image: url(images/radial_bg.png);
+	background-position: center center;
+	background-repeat: no-repeat;
+	/* Safari 4-5, Chrome 1-9 */
+	/* Can't specify a percentage size? Laaaaaame. */
+	background: -webkit-gradient(radial, center center, 0, center center, 460, from(#1a82f7
+		), to(#2F2727));
+	/* Safari 5.1+, Chrome 10+ */
+	background: -webkit-radial-gradient(circle, #1a82f7, #2F2727);
+	/* Firefox 3.6+ */
+	background: -moz-radial-gradient(circle, #1a82f7, #2F2727);
+	/* IE 10 */
+	background: -ms-radial-gradient(circle, #1a82f7, #2F2727);
+
+	/* Opera couldn't do radial gradients, then at some point they started supporting the -webkit- syntax, how it kinda does but it's kinda broken (doesn't do sizing) */
+}

@@ -1,0 +1,36 @@
+@CHARSET "UTF-8";
+/* 공통적인 css */
+caption{ font-size: 30px; margin-bottom: 30px;}
+th,td{padding-left:20px; padding-right: 20px; }
+th {border:1px solid #4699EB}
+th{background-color:#4699EB; color:white;}
+td{border: 1px solid #4699EB;}
+button{width:100px;}
+table{width:100%;}
+/* div{border: 1px solid black;} */
+/* header{margin:0 45%;} */
+/* borderList.jsp 쪽 부분 css */
+#t1{text-align: center; border-collapse:collapse; width:110%;}
+#num{padding-left:10px; padding-right:10px; width:80px;}
+#d1{margin:0 10% 0 0%;}
+#d2{margin:0 45%;} 
+
+/* contnet */
+#left{width: 25%	; height:500px; float:left;}
+#center{width: 50%; height :500px; float :left; }
+#nic { width : 25%; height:20px; float: left;  background-color: white; border: 0.3px solid black;}
+#content2 { width : 70%; height:20px; float: left; background-color: white; border: 0.3px solid black;}
+/* honeyView 부분 */
+#t2{text-align: center; border-collapse:collapse; width:150%;}
+#d3{margin:10% 37% 0 10%;}
+
+ 
+d4Left{ float: left; position: absolute; right: 0px; }  
+#d4{margin:2% 10% 0 25%; position: absolute; left : 0px;}
+#comment{float: left; margin-bottom: 50px;} 
+  
+/* border 부분 */ 
+#t3{border-collapse: collapse; margin: 0 20% 0  0;}
+/* commentList 부분 */ 
+#commentList{ height: 500px; position:relative; top:80px;  }  
+#commentTable{float: left; position: absolute; bottom: 300px;  }

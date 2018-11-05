@@ -1,0 +1,35 @@
+@CHARSET "UTF-8";
+
+#content {
+	border: black 1px solid;
+	padding: 50px 400px;
+}
+
+caption {
+	font-size: larger;	
+}
+
+table {
+	border: black 1px solid;
+	width: 800px;
+}
+
+td {
+	text-align: center;
+	border-right: solid 1px black;
+	border-bottom: solid 1px black;
+}
+
+th {
+	border-right: dashed 1px black;
+	border-bottom: dashed 1px black;
+}
+
+.nic {
+	font-style: italic;;
+}
+
+.nic:HOVER {
+	background: red;
+	background-color: red;
+}

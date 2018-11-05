@@ -1,0 +1,46 @@
+header {	height: 80px;	vertical-align: middle;
+			border-bottom: 1px #888 solid;	margin: 30px 0 0 45px;}
+
+footer {height: 80px;	border-top: 1px #888 solid;	text-align: center;
+		clear: both;	height: 100px;	padding-top: 20px;}
+
+nav ul {	list-style: none;}
+ul {	list-style: none;}
+#side {	padding: 20px 20px;}
+nav ul li {	float: left;	margin: 0 20px;}
+nav {	float: left;}
+article {	margin: 10px 0 ;	float: left;	width: 100%;	clear:both;	height: 15cm;}
+#sidemenu {	padding-top: 10px;	float: right;	height: 15cm;	width: 30%;}
+#side {	height: 20px;}
+#total {	width: 940px;	margin-right: auto;	margin-left: auto;}
+
+@charset "utf-8";
+
+* {	margin: 0;	padding: 0;}
+
+#diary {	position: relation; 	width : 50%;	float: right;}
+
+.img {	position: absolute;}
+
+.login {	position: relative;	left: 80px;	top: 380px;}
+body {	font-size: 13px;	color: #333;	font-family: "맑은고딕";
+}
+
+nav a {
+	text-decoration: none;	padding: 5px;	font-weight: bold;
+	color: #333;	font-size: 15px;
+}
+
+nav a:hover {
+	color: #6799FF;
+	border-bottom: 1px #6799FF solid;
+}
+
+#side:HOVER {
+	color: #6799FF;
+	border-bottom: 1px #6799FF solid;
+}
+
+#login {
+	margin-left: 10cm;
+}

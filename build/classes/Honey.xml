@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="honey">
+	<resultMap type="honey" id="honeyResult">
+		<result property="mnum" column="mnum" />
+		<result property="id" column="id" />
+		<result property="nic" column="nic" />
+		<result property="wnum" column="wnum" />
+		<result property="title" column="title" />
+		<result property="comp" column="comp" />
+		<result property="content" column="content" />
+		<result property="good" column="good" />
+		<result property="click" column="click" />
+		<result property="dday" column="dday" />
+	</resultMap>
+	<select id="selectList" parameterType="hashMap" resultMap="honeyResult">
+		select * from (select a.*, rownum rn from(select * from honey order by
+		wnum desc) a)
+		where rn between #{start} and #{end}
+	</select>
+	<select id="selectBest" resultMap="honeyResult">
+		select * from (select a.*, rownum rn from(select * from honey order by
+		good desc) a) where rn <![CDATA[ <= ]]>
+		5
+	</select> 
+<!-- 	<insert id="insert" parameterType="string"> -->
+<!-- 		insert into honey -->
+<!-- 		values(#{mnum} , #{id} , #{nic} , numUp.nextval , #{title} -->
+<!-- 		, 0 -->
+<!-- 		,#{content},0 ,0 , sysdate ,#{pass}) -->
+<!-- 	</insert>   -->
+	<insert id="insert" parameterType="honey"> insert into
+		honey(honey.mnum,honey.id,honey.nic,honey.pass,honey.title,honey.content,honey.regip,honey.dday,honey.wnum,honey.filepath)
+		values(#{mnum},#{id},#{nic},#{pass},#{title},#{content},#{regip},sysdate,numUp.nextval,#{filepath})
+	</insert>
+	<insert id="insert2" parameterType="honey">
+		insert into
+		suggestion(suggestion.title,suggestion.hazard,suggestion.content,suggestion.dday)
+		values(#{title},#{hazard},#{content},sysdate)
+	</insert>
+	<select id="selectTotal" resultType="java.lang.Integer">
+		select count(*) from honey
+	</select>
+	<select id="select" parameterType="int" resultMap="honeyResult">
+		select * from
+		honey where wnum = #{wnum}
+	</select>
+	<select id="selectWnum" parameterType="int" resultMap="honeyResult">
+		select *
+		from honey where wnum = #{wnum}
+	</select>
+	<delete id="delete" parameterType="int">
+		delete from honey where wnum =
+		#{wnum}
+	</delete>
+<!-- 	<update id="updateHit" parameterType="int"> update honey set click= -->
+<!-- 		click+1 where wnum=#{wnum} -->
+<!-- 	</update> -->
+<update id="setHoneyClick" parameterType="hashMap"> update honey set click= #{count} where wnum=#{num} </update>
+
+	<update id="goodHit" parameterType="int"> update honey set good=
+		good+1 where wnum=#{wnum}
+	</update>
+	<update id="readUpdate">
+		update honey set click=
+		click+1 where wnum=#{wnum}
+	</update>
+</mapper>
